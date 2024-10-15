@@ -3,7 +3,18 @@
         <h2>姓名：{{ name }}</h2>
         <h2>年龄：{{ age }}</h2>
         <h2>地址：{{ a }}</h2>
-     
+        <h3>车名：{{ car.brand }}</h3>
+        <h4>价格：{{ car.price }}万</h4>
+        <button @click="changeName">修改名字</button>
+        <button @click="addage">+1</button>
+        <button @click="cutage">-1</button>
+        <button @click="showTel">查看联系方式</button>
+        <button @click="upperprice">提高价格并改名</button>
+
+        <ul>
+            <!--  :key 中的冒号意思是将key 里面的内容当js代码-->
+            <li @click="upperprice" v-for="g in games" :key="g.id">{{ g.name }}</li>
+        </ul>
     </div>
 </template>-----------------
 
