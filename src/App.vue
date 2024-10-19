@@ -1,16 +1,13 @@
 <template>
   <div class="app">
-   <h1>你好</h1>
+    <!-- 最先渲染的 -->
+   <h1>你好</h1> 
    <Person/>      
   </div>
  </template>
 
-<script lang="ts">
+<script lang="ts" setup name ="App">
 import Person from './components/Person.vue';  //引入组件
-export default {
-  name:"App",
-  components:{Person}      //注册组件
-}
 </script>
 
 

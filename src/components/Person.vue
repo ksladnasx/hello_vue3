@@ -37,7 +37,10 @@ import {ref,watch,watchEffect} from 'vue'
   // 监视 -- watchEffect实现,全局监听
   watchEffect(()=>{
     if(temp.value >= 60 || height.value >= 80){
-      console.log('给服务器发请求')
+      console.log("请求发起")
+      if(height.value >= 100 ){
+        console.log("高度大于100了")
+      }
     }
   })
 
