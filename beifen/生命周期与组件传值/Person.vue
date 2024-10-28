@@ -70,6 +70,30 @@ let height = ref(0)
 defineExpose({ temp })
 
 // 方法
+onBeforeMount(()=> {
+  alert("开始挂载")
+})
+
+onMounted(()=> {
+  alert("挂载完成")
+})
+
+onBeforeUpdate(()=>{
+  alert("更新前")
+})
+  
+onUpdated(()=>{
+  alert("更新完成")
+})
+
+onBeforeUnmount(()=>{
+  alert("卸载前")
+})
+
+onUnmounted(()=>{
+  alert("卸载完成")
+})
+
 function changeTemp() {
   temp.value += 10
 
