@@ -1,41 +1,68 @@
 <template>
-  <div class="app">
-    <!-- 最先渲染的 -->
-   <h1>你好</h1> 
-   <!-- //ref获取，同名变量接收 -->
-   <Person ref="per" v-if="isShow"/>  
-   <!--  v-if根据指定值的真假来判断是否渲染该元素  -->
-   <button @click="delper">点我卸载person的数据</button>
-  <button @click="getper">点我获取person让你获取的数据</button>
-  </div>
- </template>
+    <div class="app">
+        <!-- 一般组件放components,路由组件放pages -->
+        <Header></Header>
+        <!-- 导航区 -->
+        <div class="navigate">
+            <!--active-class被激活时候的类名，用于css样式切换 -->
+            <RouterLink to="/home" active-class="active">首页</RouterLink>
+            <RouterLink to="/news" active-class="active">新闻</RouterLink>
+            <RouterLink to="/about" active-class="active">关于</RouterLink>
+        </div>
 
-<script lang="ts" setup name ="App" >
-import Person from './components/Person.vue';  //引入组件
-import {ref} from 'vue'
+        <!-- 没使用的组件默认卸载,需要的时候再挂载 -->
+        <!-- 展示区 -->
+        <div class="main-content">
 
-let per = ref()
-// console.log(per.value)
+            <!-- 拿引入的 Router-view占位置告诉路由器切换的组件该放在哪-->
+            <Router-view></Router-view>
 
-let isShow = ref(true)
+        </div>
+    </div>
+</template>
 
-function getper(){
-   console.log(per.value)
-}
-
-function delper(){
-   isShow.value = false
-}
+<script lang="ts" setup name="App">
+import { RouterView, RouterLink } from 'vue-router';
+import Header from './components/Header.vue';
 </script>
 
-
+.mount('#app')
 
 <style scoped>
-  .aoo{
-    background: hsl(60, 84%, 43%);
-    box-shadow: 0,0,10px;
-    border-radius: 20px;
-    padding: 20px;
+.navigate {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 100px;
+}
 
-  }
+.navigate a {
+    display: block;
+    text-align: center;
+    width: 90px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 10px;
+    background-color: gray;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 5px;
+}
+
+.navigate a.active {
+    background-color: #64967E;
+    color: #ffc268;
+    font-weight: 900;
+    text-shadow: 0 0 1px black;
+    font-family: 微软雅黑;
+}
+
+.main-content {
+    margin: 0 auto;
+    margin-top: 30px;
+    border-radius: 10px;
+    width: 90%;
+    height: 400px;
+    border: 1px solid;
+}
 </style>

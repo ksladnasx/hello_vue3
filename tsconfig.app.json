@@ -5,7 +5,7 @@
   "src/**/*.tsx",
   "src/**/*.vue",
   "*.ts"
-],
+, "beifen/生命周期与组件传值/types"],
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {
     "composite": true,

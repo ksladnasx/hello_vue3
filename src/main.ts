@@ -1,6 +1,11 @@
-
-
 import { createApp } from 'vue'  //引入平台创建应用
 import App from './App.vue'      //根组件
+import router from './router'
 
-createApp(App).mount('#app')     //根放花盆，mount指挂载在id 是app的div 里面
+//创建一个应用
+const app = createApp(App)    
+//使用路由器
+app.use(router)
+
+//挂载整个应用到app容器中
+app.mount('#app') 
