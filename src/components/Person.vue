@@ -1,9 +1,9 @@
 <template>
     <div class="person">
-        <h2>需求：当水温达到60度，或水位达到80cm时，给服务器发请求</h2>
-    <h2>当前水温：{{temp}}℃</h2>
+        <h2 ref = "temps">需求：当水温达到60度，或水位达到80cm时，给服务器发请求</h2>
+    <h2 >当前水温：{{temp}}℃</h2>
     <h2>当前水位：{{height}}cm</h2>
-    <button @click="changeTemp">水温+10</button>
+    <button @click="changeTemp" >水温+10</button>
     <button @click="changeHeight">水位+10</button>
     </div>
 </template>-----------------
@@ -11,14 +11,49 @@
 <!-- 命名可利用插件简化 -->
 <script lang="ts" setup name="Person">
 import {ref,watch,watchEffect} from 'vue'
+import {type person} from '../types'
 
+
+let p :person = {
+  id:"djafka01",
+  name:"张三",
+  age:222,
+  school:"重邮"
+}
+let persons:Array<person>=[
+  {
+  id:"djafka01",
+  name:"张三",
+  age:222,
+  school:"重邮"
+},
+{
+  id:"djafka02",          
+  name:"李三",
+  age:23,
+  school:"重邮"
+},
+{
+  id:"djafka01",
+  name:"刘三",
+  age:2,
+  school:"重邮"
+}
+]
+  let temps = ref()
   // 数据
   let temp = ref(10)
   let height = ref(0)
-
+  // console.log(temps.value)直接打印不行因为组件没加载渲染完
+  //defineExpose定义能暴露给其他组件的数据
+  defineExpose({ temp})
+  
   // 方法
   function changeTemp(){
     temp.value += 10
+    
+console.log("dd ")
+console.log(temps.value)
   }
   function changeHeight(){
     height.value += 10
