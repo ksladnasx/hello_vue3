@@ -7,8 +7,8 @@
 
             <!--active-class被激活时候的类名，用于css样式切换 -->
             <RouterLink :to="{path:'/home'}" active-class="active">首页</RouterLink>
-            <!-- to后面还能写成对象模式，或者一个单字符串 -->
-            <RouterLink to="/news" active-class="active">新闻</RouterLink>
+            <!-- to后面还能写成对象模式，或者一个单字符串或者用名字跳转 -->
+            <RouterLink :to="{name:'xinwen'}" active-class="active">新闻</RouterLink>
             <RouterLink to="/about" active-class="active">关于</RouterLink>
         </div>
 
@@ -28,6 +28,7 @@ import { RouterView, RouterLink } from 'vue-router';
 import Header from './components/Header.vue';
 </script>
 
+.mount('#app')
 
 <style scoped>
 .navigate {

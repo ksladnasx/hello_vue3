@@ -4,29 +4,22 @@ import { createRouter, createWebHistory } from "vue-router"
 import Home from "@/pages/Home.vue"
 import News from "@/pages/News.vue"
 import About from "@/pages/About.vue"
-import Detail from "@/pages/Detail.vue"
 
 //  想好路由器工作模式并创建路由器
 const router = createRouter({
+    //先定义路由工作模式
     history: createWebHistory(),
+    //数组里面定义路由地址与对应组件（一个个的路由规则）
     routes: [
         {
             name:"zhuye", //命名路由，后期可以通过路由跳转
             path: "/home",
             component: Home
         },
-        //定义子级嵌套路由
         {
             name:"xinwen",
             path: "/news",
-            component: News,
-            children:[
-                {
-                    //子级路由别打斜杠！！！！
-                    path:"detail",
-                    component:Detail
-                }
-            ]
+            component: News
         },
         {
             name:"guanyu",
