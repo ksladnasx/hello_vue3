@@ -1,14 +1,11 @@
-import {reactive } from 'vue'
+import {ref} from 'vue'
 // npm i axios 安装axios 
 import axios from 'axios';
-import useDog from '@/hook/useDog';
 
 // export default 默认暴露，后面直接跟上值，函数可以无名
 export default function () {
     //数据
-    let dogList = reactive([
-        "https://images.dog.ceo/breeds/pembroke/n02113023_710.jpg"
-    ])
+    let dogList = ref("https://images.dog.ceo/breeds/pembroke/n02113023_710.jpg")
 
     //方法
   
@@ -17,7 +14,7 @@ export default function () {
         try {
             let result = await axios.get("https://dog.ceo/api/breed/pembroke/images/random")
             //  console.log(result.data.message)
-            dogList.push(result.data.message)
+            dogList.value =  result.data.message
         } catch (error) {
             alert(error)
         }

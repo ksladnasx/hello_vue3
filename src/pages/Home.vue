@@ -2,7 +2,7 @@
 
     <div class="home">
 
-        <img id="imgs" v-for="(dog, index) in dogList" :src="dog" :key="index">
+        <img id="imgs" :src=dogList > 
 
 
     </div>
