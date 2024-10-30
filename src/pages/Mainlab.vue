@@ -30,6 +30,12 @@ import { useRouter } from 'vue-router';
 
 const router = useRouter() //直接拿到路由器，掌握所有路由标签
 
+onMounted(()=>{
+    // 挂载完成0.003后自动跳转到home页面（push模式跳转）
+    setTimeout(() => {
+        router.push('/home')
+    }, 3);
+})
 </script>
 
 
