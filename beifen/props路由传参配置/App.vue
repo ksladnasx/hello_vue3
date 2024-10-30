@@ -13,9 +13,11 @@
             <RouterLink replace to="/about" active-class="active">关于</RouterLink>
         </div>
 
+        <!-- 没使用的组件默认卸载,需要的时候再挂载 -->
         <!-- 展示区 -->
         <div class="main-content">
 
+            <!-- 拿引入的 Router-view占位置告诉路由器切换的组件该放在哪-->
             <Router-view></Router-view>
 
         </div>
@@ -25,17 +27,6 @@
 <script lang="ts" setup name="App">
 import { RouterView, RouterLink } from 'vue-router';
 import Header from './components/Header.vue';
-import { onMounted } from 'vue';
-import { useRouter } from 'vue-router';
-
-const router = useRouter() //直接拿到路由器，掌握所有路由标签
-
-onMounted(()=>{
-    // 挂载完成0.003后自动跳转到home页面（push模式跳转）
-    setTimeout(() => {
-        router.push('/home')
-    }, 3);
-})
 </script>
 
 

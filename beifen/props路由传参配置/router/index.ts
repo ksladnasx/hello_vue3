@@ -28,8 +28,15 @@ const router = createRouter({
                     name:"xiang",
                     component:Detail,
 
+                    // RouterLink如果是params,会自动帮你传好,只需要用defineProps在对应组件接收就行
                     props:true
 
+                    // 如果是query就得写为函数式的
+                    // props(route){
+                    //     return route.query
+                    // }
+
+                    //对象写法也可以，但是写死了不会变
                 }
             ]
         },

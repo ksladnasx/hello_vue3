@@ -5,17 +5,18 @@
         <!-- 导航区 -->
         <div class="navigate">
 
+            <!--active-class被激活时候的类名，用于css样式切换 -->
             <RouterLink :to="{path:'/home'}" active-class="active">首页</RouterLink>
-          
+            <!-- to后面还能写成对象模式，或者一个单字符串 -->
             <RouterLink to="/news" active-class="active">新闻</RouterLink>
-
-            <!-- 默认是push模式，加上replace改为replace模式（类似无痕浏览无法退回上一个页面） -->
-            <RouterLink replace to="/about" active-class="active">关于</RouterLink>
+            <RouterLink to="/about" active-class="active">关于</RouterLink>
         </div>
 
+        <!-- 没使用的组件默认卸载,需要的时候再挂载 -->
         <!-- 展示区 -->
         <div class="main-content">
 
+            <!-- 拿引入的 Router-view占位置告诉路由器切换的组件该放在哪-->
             <Router-view></Router-view>
 
         </div>
@@ -25,17 +26,6 @@
 <script lang="ts" setup name="App">
 import { RouterView, RouterLink } from 'vue-router';
 import Header from './components/Header.vue';
-import { onMounted } from 'vue';
-import { useRouter } from 'vue-router';
-
-const router = useRouter() //直接拿到路由器，掌握所有路由标签
-
-onMounted(()=>{
-    // 挂载完成0.003后自动跳转到home页面（push模式跳转）
-    setTimeout(() => {
-        router.push('/home')
-    }, 3);
-})
 </script>
 
 

@@ -26,10 +26,7 @@ const router = createRouter({
                     //:content?表示传的content可有可不有
                     path:"detail/:id/:title/:content?",
                     name:"xiang",
-                    component:Detail,
-
-                    props:true
-
+                    component:Detail
                 }
             ]
         },
