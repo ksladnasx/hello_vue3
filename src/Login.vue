@@ -50,8 +50,8 @@
 </template>
 
 <script lang="ts" setup name="App">
-import { RouterView, RouterLink } from 'vue-router';
-import { onMounted, ref } from 'vue';
+import { RouterView, } from 'vue-router';
+import {  ref } from 'vue';
 import { useRouter } from 'vue-router';
 import '@/css/dl.css'
 import { accountList } from './data/accountList';
