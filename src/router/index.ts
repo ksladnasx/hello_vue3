@@ -6,6 +6,7 @@ import News from "@/pages/News.vue"
 import About from "@/pages/About.vue"
 import Detail from "@/pages/Detail.vue"
 import App from "@/App.vue"
+import Login from "@/Login.vue"
 
 //  想好路由器工作模式并创建路由器
 const router = createRouter({

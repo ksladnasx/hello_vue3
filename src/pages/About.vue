@@ -1,8 +1,8 @@
 <template>
     <div class="about">
       <h2>欢迎来看狗</h2>
-
-      <h5>{{time}}s后跳转主页......</h5>
+      <br>
+      <span>{{time}}s后跳转主页......</span>
     </div>
   </template>
   
@@ -19,14 +19,23 @@ onMounted(()=>{
     setTimeout(() => {
       time.value = time.value-1;
     }, 1000);
-    
+    setTimeout(() => {
+      time.value = time.value-1;
+    }, 2000);
+    setTimeout(() => {
+      time.value = time.value-1;
+    }, 3000);
     
     // if(time.value == 3){
     //   router.push('/home')
     // }
     
+
   
 })
+if(time.value == 0){
+  router.push('/home')
+}
   </script>
   
   <style scoped>
