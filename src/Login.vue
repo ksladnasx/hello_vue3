@@ -50,8 +50,7 @@
 </template>
 
 <script lang="ts" setup name="App">
-import { RouterView, } from 'vue-router';
-import {  ref } from 'vue';
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import '@/css/dl.css'
 import { accountList } from './data/accountList';
@@ -63,26 +62,29 @@ let account: string
 const router = useRouter()
 let flag = ref(true)
 function toApp() {
-    if(password == undefined){
+    if (password == undefined) {
         alert("请输入密码！")
+        return
     }
-    if(account == undefined){
+    if (account == undefined) {
         alert("请输入账号！")
+        return
     }
-    for ( let i = 0; i < accountList.length; i++) {
+    for (let i = 0; i < accountList.length; i++) {
         if (account == accountList[i].account && password == accountList[i].password) {
             flag.value = false
             router.push('/app')
-            alert("跳转成功！")
+            alert("登录成功！")
             break
         }
-        if(i == accountList.length -1){
-        alert("用户不存在！")
+        if (i == accountList.length - 1) {
+            alert("用户不存在！")
+            return
+        }
     }
-    }
-    
-    
-        
+
+
+
 
 
 

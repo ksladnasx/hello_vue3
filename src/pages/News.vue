@@ -15,7 +15,7 @@
             content:news.content 
           } 
            }">
-          {{ news.title }}<button @click="getnews(news)">详情</button>
+          {{ news.title }}<button @click="getnews(news)" style="margin-left: 20px;">详情</button>
         </RouterLink>
       </li>
     </ul>
