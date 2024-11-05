@@ -2,6 +2,7 @@
     <div class="app">
         <!-- 一般组件放components,路由组件放pages -->
         <Header></Header>
+       
         <!-- 导航区 -->
         <div class="navigate">
 
@@ -27,6 +28,7 @@ import { RouterView, RouterLink } from 'vue-router';
 import Header from './components/Header.vue';
 import { onMounted } from 'vue';
 import { useRouter } from 'vue-router';
+
 
 const router = useRouter() //直接拿到路由器，掌握所有路由标签
 

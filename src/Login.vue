@@ -54,7 +54,7 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import '@/css/dl.css'
 import { accountList } from './data/accountList';
-
+import  '@/request'
 let password: number
 let account: string
 
