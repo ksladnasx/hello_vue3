@@ -1,5 +1,6 @@
+
 <template>
-  <h2 class="title">Vue3 路由测试</h2>
+  <h2 class="title">pina组件管理测试</h2>
 </template>
 
 <script setup lang="ts" name="Header">
