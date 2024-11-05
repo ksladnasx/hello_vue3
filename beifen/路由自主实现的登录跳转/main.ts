@@ -5,7 +5,7 @@ import About from './pages/About.vue'
 import Login from './Login.vue'
 
 //创建一个应用，以登录页面为初始页面
-const app = createApp(App)    
+const app = createApp(Login)    
 //使用路由器
 app.use(router)
 
