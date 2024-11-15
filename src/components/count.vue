@@ -1,6 +1,6 @@
 <template>
   <div class="count">
-    <h2>当前求和为{{ sum }}</h2>
+    <h2>当前求和为{{ countStore.sum}}</h2>
     <!-- 将收集到的东西转成number而不是字符串 -->
     <select v-model.number="n">  
         <option value="1">1</option>
@@ -13,20 +13,26 @@
 </template>
 
 <script setup lang='ts' >
-import { ref } from 'vue';
+import {  ref, toRef } from 'vue';
 import { useCountStore } from '@/store/count'
-
 const countStore = useCountStore()
+
+// let sum =computed(()=>countStore.sum)//注意这样额外定义之后无法改sum，因为是计算属性，
+// 但如果直接定义sum是countStore.sum的话又会因为传参使得数据丢失响应式
+// 最好的方法就是直接countStore.sum
 //useCountStore()返回的是一个reactive对象，已经把包装的ref数据自动解包了就不需要.value了
-let sum = ref(countStore.sum ) //当前求和
+// let sum = toRef(countStore.sum)
+
 let n = ref(1)    //用户选择 
 
 function add(){
     // 直接调用countStore内置的方法修改数据
     countStore.increament(n.value)
+
 }
 function minus(){
-    sum.value -= n.value
+    countStore.sum -= n.value
+    
 }
 </script>
 

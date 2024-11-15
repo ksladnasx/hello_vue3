@@ -1,0 +1,34 @@
+直接返回数据：
+随机二次元图片：https://api.oick.cn/api/random
+二次元（高清但较慢）：https://api.vvhan.com/api/wallpaper/acg
+社会语录：https://api.oick.cn/api/yulu
+鸡汤网易云：https://api.vvhan.com/api/ian/rand
+舔狗日记：https://api.vvhan.com/api/text/dog
+Bing每日图片（每日就一张）：https://api.vvhan.com/api/bing
+二次元头像：https://api.vvhan.com/api/avatar/dm
+
+返回带url的json:
+每日英语（每日就一句）：https://api.vvhan.com/api/dailyEnglish
+鸭子图片：https://random-d.uk/api/v2/random
+狐狸图片：https://randomfox.ca/floof/
+虫部落帖子的url返回：https://api.vvhan.com/api/hotlist/chongBluo
+网易云热歌榜（一次一个）：https://api.vvhan.com/api/wyMusic/%E7%83%AD%E6%AD%8C%E6%A6%9C?type=json
+知乎热榜：https://api.vvhan.com/api/hotlist/zhihuHot
+豆瓣小组:https://api.vvhan.com/api/hotlist/zhihuHot
+
+需要自己传参数的接口：
+书摘生成：https://api.vvhan.com/api/artText  （如https://api.vvhan.com/api/artText?text=大胆去做，不要怕，\n没有人在乎，\n就算有人在乎\n人又算什么东西。&auther=一毛姆《刀锋》&color=009EFF）
+text：输入内容   auther：作者名字   color：文字颜色  bgcolor：背景颜色（注意\n 为换行符）
+
+手机号归属地查询：https://api.vvhan.com/api/phone/这里输入电话号码
+
+根据文本内容生成的二维码：https://api.vvhan.com/api/qr?text=文本内容
+
+
+
+
+
+
+
+
+

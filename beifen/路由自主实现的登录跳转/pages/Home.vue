@@ -10,8 +10,8 @@
 </template>
 
 <script setup lang="ts" name="Home">
-
 import useDog from '@/hook/useDog';
+
 const { dogList, getDog } = useDog()
 
 </script>

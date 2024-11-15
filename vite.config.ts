@@ -6,6 +6,9 @@ import VueSetupExtend from "vite-plugin-vue-setup-extend"
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server:{
+    hmr:true
+  },
   plugins: [
     vue(),
     VueSetupExtend() //插件追加调用
