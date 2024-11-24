@@ -1,7 +1,6 @@
 <template>
     <div class="app">
-        
-        <!-- 一般组件放components,路由组件放pages -->
+                <!-- 一般组件放components,路由组件放pages -->
         <Header></Header>
         <phones/>
         <br>
